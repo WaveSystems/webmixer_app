@@ -11,6 +11,7 @@ gem 'oauth2'
 gem 'omniauth-facebook'
 gem 'devise'
 gem 'haml'
+gem 'paperclip'
 
 
 # Gems used only for assets and not required
