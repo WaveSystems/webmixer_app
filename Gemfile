@@ -7,6 +7,10 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3'
 gem 'grooveshark'
+gem 'oauth2'
+gem 'omniauth-facebook'
+gem 'devise'
+gem 'haml'
 
 
 # Gems used only for assets and not required
