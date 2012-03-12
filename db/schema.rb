@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120305173331) do
+ActiveRecord::Schema.define(:version => 20120312171012) do
 
   create_table "profiles", :force => true do |t|
     t.string   "bio"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120305173331) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "rpx_identifier"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

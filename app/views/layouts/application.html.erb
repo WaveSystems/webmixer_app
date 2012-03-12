@@ -35,7 +35,7 @@
             <ul class="nav">
               <%- if user_signed_in? %>
               <li><%= link_to current_user.email, "/" %></li>
-              <li><%= link_to "Sign out", destroy_user_session_path, :method => "delete" %></li>
+              <li><%= link_to "not you? Sign out", destroy_user_session_path, :method => "delete" %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -73,6 +73,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-
+    <%= javascript_include_rpx(user_session_url) %>
   </body>
 </html>
