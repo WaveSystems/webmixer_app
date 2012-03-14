@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: cac6ac5e0f52b88aab5e9bcfdffe5cae87ab3085
+  revision: cdeb0086b1b71d139d45c93bbd2845795f64cfe6
   specs:
     twitter-bootstrap-rails (2.0.3)
       actionpack (>= 3.1)
@@ -79,10 +79,10 @@ GEM
       thor (~> 0.14)
     json (1.6.5)
     json_pure (1.6.5)
-    less (2.0.9)
+    less (2.0.10)
       commonjs (~> 0.2.0)
       therubyracer (~> 0.9.9)
-    less-rails (2.1.6)
+    less-rails (2.1.7)
       actionpack (>= 3.1)
       less (~> 2.0.7)
     libv8 (3.3.10.4)
