@@ -1,3 +1,23 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image: url('background.png');
+  background-color: black;
+}
+
+#mixer_panel {
+  width: 1024px;
+  height: 768px;
+  display: block;
+}
+
+#left_mixer {
+}
+
+#right_mixer {
+}
+
+.knob {
+  display: block;
+}
