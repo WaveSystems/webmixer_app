@@ -12,12 +12,34 @@ body {
   display: block;
 }
 
-#left_mixer {
-}
-
-#right_mixer {
-}
-
-.knob {
+#mixer_panel div {
   display: block;
+  float: left;
+}
+
+#left_mixer img{
+  display: block;
+  float: left;
+}
+
+#left_knob img{
+  padding: 10px 0 10px 0;
+}
+
+#center_panel img{
+  display: block;
+  padding: 10px 10px;
+}
+
+#right_knob img{
+  padding: 10px 0 10px 0;
+}
+
+#left_knob img, #right_knob img {
+  display: block;
+}
+
+#right_mixer img{
+  display: block;
+  float: left;
 }
