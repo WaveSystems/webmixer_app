@@ -10,20 +10,25 @@ body {
   width: 1024px;
   height: 768px;
   display: block;
+  border: 2px solid black;
+  padding-left: 5px;
 }
 
 #mixer_panel div {
-  display: block;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px 0 5px;
 }
 
 #left_mixer img{
   display: block;
   float: left;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#left_knob img{
-  padding: 10px 0 10px 0;
+#left_mixer h4,#right_mixer h4 {
+  display: inline-block;
 }
 
 #center_panel img{
@@ -31,15 +36,29 @@ body {
   padding: 10px 10px;
 }
 
-#right_knob img{
-  padding: 10px 0 10px 0;
-}
-
 #left_knob img, #right_knob img {
   display: block;
+  padding: 10px 0 10px 0;
 }
 
 #right_mixer img{
   display: block;
   float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bottom_left_pad {
+  padding-left: 10px;
+}
+
+#bottom_left_pad, #bottom_center_pad, #bottom_right_pad{
+  padding-top: 30px;
+}
+
+#bottom_left_pad img, #bottom_center_pad img, #bottom_right_pad img{
+  display: block;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
 }

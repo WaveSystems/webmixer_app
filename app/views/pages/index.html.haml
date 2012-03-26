@@ -1,32 +1,39 @@
-#mixer_panel
-  %h3 Here will go the whole mixer panel
-  #left_mixer
-    -#Left mixer
-    = image_tag('turntable.png') 
-    = image_tag('needle_left.png', :class => 'needle') 
-    = image_tag('pitch.png') 
-    -#Volumen and master knobs
-  #left_knob
-    = image_tag('knob.png') 
-    = image_tag('knob.png') 
-    = image_tag('knob.png') 
-    = image_tag('knob.png') 
-  #center_panel
-    = image_tag('volumen.png') 
-    = image_tag('volumen.png') 
-  #right_knob
-    = image_tag('knob.png') 
-    = image_tag('knob.png') 
-    = image_tag('knob.png') 
-    = image_tag('knob.png') 
-  #right_mixer
-    -#Right mixer
-    = image_tag('pitch.png') 
-    = image_tag('needle_right.png', :class => 'needle') 
-    = image_tag('turntable.png') 
-  #bottom_pad
-    = image_tag('loop.png')
-    = image_tag('play_pause.png')
-    = image_tag('balance.png')
-    = image_tag('play_pause.png')
-    = image_tag('loop.png')
+= if user_signed_in?
+  #mixer_panel
+    %h3 Here will go the whole mixer panel
+    #left_mixer
+      -#Left mixer
+      = image_tag('turntable.png') 
+      = image_tag('needle_left.png')
+    #pitch
+      %h4 Pitch
+      = image_tag('pitch.png') 
+      -#Volumen and master knobs
+    #left_knob
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+    #center_panel
+      = image_tag('volumen.png') 
+      = image_tag('volumen.png') 
+    #right_knob
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      -#Right mixer
+    #pitch
+      %h4 Pitch
+      = image_tag('pitch.png') 
+    #right_mixer
+      = image_tag('needle_right.png') 
+      = image_tag('turntable.png') 
+    #bottom_left_pad
+      = image_tag('loop.png')
+      = image_tag('play_pause.png')
+    #bottom_center_pad
+      = image_tag('balance.png')
+    #bottom_right_pad
+      = image_tag('loop.png')
+      = image_tag('play_pause.png')
