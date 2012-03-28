@@ -27,8 +27,8 @@ body {
   padding-right: 5px;
 }
 
-#left_mixer h4,#right_mixer h4 {
-  display: inline-block;
+#pitch h4,#pitch h4 {
+  color: white;
 }
 
 #center_panel img{
@@ -70,4 +70,5 @@ body {
 
 #bottom_left_pad h4, #bottom_right_pad h4{
   padding: 10px 0 10px 0;
+  color: white;
 }
