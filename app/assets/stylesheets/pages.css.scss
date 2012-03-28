@@ -56,9 +56,18 @@ body {
   padding-top: 30px;
 }
 
-#bottom_left_pad img, #bottom_center_pad img, #bottom_right_pad img{
+#bottom_center_pad img{
   display: block;
   padding-top: 20px;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+#bottom_left_pad img, #bottom_right_pad img{
+  display: inline;
+  padding: 0 0 ;
+}
+
+#bottom_left_pad h4, #bottom_right_pad h4{
+  padding: 10px 0 10px 0;
 }
