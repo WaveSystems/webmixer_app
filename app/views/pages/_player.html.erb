@@ -1,0 +1,33 @@
+    <div id="mask"></div>
+    <div id="startup">
+      <div id="prompt">
+        <center>
+          <input type="file" webkitdirectory directory multiple mozdirectory onchange="getSongs(this.files)">
+        </center>
+      </div>
+      <div id="support" style="position:absolute;z-index:99999;color:red;font-size:x-large"> <!-- insert cheap knockoff modernizer clone -->
+      
+      </div>
+    </div>
+    <div id="search">
+      <input type="text" placeholder="filter library" spellcheck=off autocomplete=off oninput="runSearch(this.value)">
+    </div>
+    <div style="height: 37px"></div>
+    <div id="playlist">
+      <table id="playtable"></table>
+    </div>
+    <div id="listtools">
+      <a href="javascript:shuffle()">Shuffle</a> / 
+      <a href="javascript:empty()">Clear</a>
+    </div>
+    <div id="songs">
+      <table id="songtable" cellspacing=0 cellpadding=0>
+      </table>
+    </div>
+    
+
+    <div style="height: 50px"></div>
+    
+    <div id="footer">
+      <audio onended="nextSong()" controls id="player">
+    </div>
