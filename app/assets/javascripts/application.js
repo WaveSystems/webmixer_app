@@ -96,13 +96,13 @@ function getSongs(files){
         td.innerHTML = tags.Artist || t2.Artist;
         tr.appendChild(td);
 
-        var td = document.createElement('td');
-        td.innerHTML = tags.Album || t2.Album;
-        tr.appendChild(td);
+        //var td = document.createElement('td');
+        //td.innerHTML = tags.Album || t2.Album;
+        //tr.appendChild(td);
 
-        var td = document.createElement('td');
-        td.innerHTML = tags.Genre || "";
-        tr.appendChild(td);
+        //var td = document.createElement('td');
+        //td.innerHTML = tags.Genre || "";
+        //tr.appendChild(td);
         //Between this marks is the code to make to tables of songs
         tr.onclick = function(){
           var deck = new Boolean(false);

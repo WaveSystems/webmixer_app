@@ -111,7 +111,7 @@ body {
 }
 
 #playlist {
-  color: white;
+  color: gray;
 }
 
 #playlist table {
@@ -141,10 +141,12 @@ table td {
 #playlist table tr.playing {
   /*background: #76AD8B;*/
   font-style: italic;
+  color: black;
 }
 
 #playlist table tr.playing td {
   padding-left: 20px;
+  color: black;
 }
 
 #listtools {
@@ -153,7 +155,7 @@ table td {
   color: #ddd;
 }
 #listtools a {
-  color: white;
+  color: #ddd;
   text-decoration: none;
 }
 
