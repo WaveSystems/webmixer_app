@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+var deck = new Boolean(false);
+
 function parseFile(file, callback){
   if(localStorage[file.fileName]) return callback(JSON.parse(localStorage[file.fileName]));
   ID3v2.parseFile(file,function(tags){
@@ -96,57 +98,43 @@ function getSongs(files){
         td.innerHTML = tags.Artist || t2.Artist;
         tr.appendChild(td);
 
-        //var td = document.createElement('td');
-        //td.innerHTML = tags.Album || t2.Album;
-        //tr.appendChild(td);
-
-        //var td = document.createElement('td');
-        //td.innerHTML = tags.Genre || "";
-        //tr.appendChild(td);
         //Between this marks is the code to make to tables of songs
         tr.onclick = function(){
-          var deck = new Boolean(false);
           var pl = document.createElement('tr');
           var st = document.createElement('td');
+          var no_deck = '1';
           st.innerHTML = tags.Title || t2.Title;
           pl.appendChild(st);
           $("playtable").appendChild(pl);
-          if(!deck){
+          if(deck == true){
             pl.file = f;
             pl.className = 'visible';
-            console.log(deck);
+            no_deck = '2';
             deck = false;
           } else {
             pl.file = f;
-            pl.className = 'visible2';
-            console.log(deck);
+            pl.className = 'visible';
+            no_deck = '1';
             deck = true;
           }
-          pl.onclick = function(e){
-            if(e && e.button == 1){
-              pl.parentNode.removeChild(pl);
-            }else{
-              var url;
-              if(window.createObjectURL){
-                url = window.createObjectURL(f)
-              }else if(window.createBlobURL){
-                url = window.createBlobURL(f)
-              }else if(window.URL && window.URL.createObjectURL){
-                url = window.URL.createObjectURL(f)
-              }else if(window.webkitURL && window.webkitURL.createObjectURL){
-                url = window.webkitURL.createObjectURL(f)
-              }
-
-              $("player").src = url;
-              $("player").play();
-              for(var i = document.querySelectorAll('.playing'), l = i.length; l--;){
-                i[l].className = '';
-              }
-              pl.className += ' playing';
-              currentSong = pl;
-            }
+          var url;
+          if(window.createObjectURL){
+            url = window.createObjectURL(f)
+          }else if(window.createBlobURL){
+            url = window.createBlobURL(f)
+          }else if(window.URL && window.URL.createObjectURL){
+            url = window.URL.createObjectURL(f)
+          }else if(window.webkitURL && window.webkitURL.createObjectURL){
+            url = window.webkitURL.createObjectURL(f)
           }
-          if($("playtable").childNodes.length == 1) pl.onclick();
+
+          console.log(no_deck);
+          $("player" + no_deck).src = url;
+          $("player" + no_deck).play();
+          for(var i = document.querySelectorAll('.playing'), l = i.length; l--;){
+            i[l].className = '';
+          }
+          currentSong = pl;
         }
         ////////////////////////////////////////////////////
         $('songtable').appendChild(tr);
