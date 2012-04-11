@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
-var deck = new Boolean(false);
 var no_deck = '1';
 
 function parseFile(file, callback){
@@ -101,18 +100,15 @@ function getSongs(files){
 
         //Between this marks is the code to make to tables of songs
         tr.onclick = function(){
+          document.getElementById('song_deck1');
+          td.innerHTML = tags.Title || t2.Title;
           var pl = document.createElement('tr');
           var st = document.createElement('td');
           st.innerHTML = tags.Title || t2.Title;
           pl.appendChild(st);
           $("playtable").appendChild(pl);
-          if(deck == true){
-            pl.file = f;
-            pl.className = 'visible';
-          } else {
-            pl.file = f;
-            pl.className = 'visible';
-          }
+          pl.file = f;
+          pl.className = 'visible';
           var url;
           if(window.createObjectURL){
             url = window.createObjectURL(f)
@@ -124,6 +120,7 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
+          console.log(no_deck);
           $("player" + no_deck).src = url;
           $("player" + no_deck).play();
           for(var i = document.querySelectorAll('.playing'), l = i.length; l--;){
@@ -161,12 +158,10 @@ function nextSong(){
 
 function deck1(){
   no_deck = '1';
-  deck = true;
 }
 
 function deck2(){
   no_deck = '2';
-  deck = false;
 }
 
 onload = function(){
