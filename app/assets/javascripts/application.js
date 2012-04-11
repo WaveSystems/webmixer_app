@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 var deck = new Boolean(false);
+var no_deck = '1';
 
 function parseFile(file, callback){
   if(localStorage[file.fileName]) return callback(JSON.parse(localStorage[file.fileName]));
@@ -102,20 +103,15 @@ function getSongs(files){
         tr.onclick = function(){
           var pl = document.createElement('tr');
           var st = document.createElement('td');
-          var no_deck = '1';
           st.innerHTML = tags.Title || t2.Title;
           pl.appendChild(st);
           $("playtable").appendChild(pl);
           if(deck == true){
             pl.file = f;
             pl.className = 'visible';
-            no_deck = '2';
-            deck = false;
           } else {
             pl.file = f;
             pl.className = 'visible';
-            no_deck = '1';
-            deck = true;
           }
           var url;
           if(window.createObjectURL){
@@ -128,7 +124,6 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
-          console.log(no_deck);
           $("player" + no_deck).src = url;
           $("player" + no_deck).play();
           for(var i = document.querySelectorAll('.playing'), l = i.length; l--;){
@@ -164,21 +159,14 @@ function nextSong(){
   }
 }
 
-function shuffle(){
-  var pt = document.getElementById('playtable');
-  //fisher yates shuffle. hopefully.
-  for(var i = document.querySelectorAll("#playtable tr"), l = i.length;  l--;){
-    var j = Math.floor(Math.random() * l);
-    var jel = i[j], iel = i[l];
-    var jref = jel.nextSibling, iref = iel.nextSibling;
-    pt.insertBefore(jel, iref);
-    pt.insertBefore(iel, jref);
-  }
+function deck1(){
+  no_deck = '1';
+  deck = true;
 }
 
-function empty(){
-  var pt = document.getElementById('playtable');
-  pt.innerHTML = '';
+function deck2(){
+  no_deck = '2';
+  deck = false;
 }
 
 onload = function(){
