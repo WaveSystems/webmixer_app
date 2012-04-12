@@ -13,16 +13,6 @@
       <input type="text" placeholder="filter library" spellcheck=off autocomplete=off oninput="runSearch(this.value)">
     </div>
     <div style="height: 37px"></div>
-    <div id="playlist">
-      <table id="playtable">
-        <tr class="visible">
-          <td id="song_deck1"> 00 - None </td>
-        </tr>
-        <tr class="visible">
-          <td id="song_deck2"> 00 - None </td> 
-        </tr>
-      </table>
-    </div>
     <div id="listtools">
       <a href="javascript:deck1()" style="color: black;">Deck 1</a> / 
       <a href="javascript:deck2()" style="color: black;">Deck 2</a>
@@ -36,6 +26,6 @@
     <div style="height: 50px"></div>
     
     <div id="footer">
-      <audio onended="nextSong()" controls id="player1"></audio>
-      <audio onended="nextSong()" controls id="player2"></audio>
+      <audio controls id="player1"></audio>
+      <audio controls id="player2"></audio>
     </div>

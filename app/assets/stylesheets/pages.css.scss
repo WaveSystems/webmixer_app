@@ -21,6 +21,12 @@ body {
   padding: 0 5px 0 5px;
 }
 
+#song_deck1, #song_deck2 {
+  color: white;
+  font-size: 1.5em;
+  width: 50px;
+}
+
 #left_mixer img{
   display: block;
   float: left;
@@ -108,16 +114,6 @@ body {
   overflow: scroll;
   padding-left: 5px;
   height: 530px;
-}
-
-#playlist {
-  color: gray;
-}
-
-#playlist table {
-  width: 100%;
-  margin: 5px;
-  margin-left: 10px;
 }
 
 table tr:hover {

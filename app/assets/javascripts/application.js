@@ -100,15 +100,8 @@ function getSongs(files){
 
         //Between this marks is the code to make to tables of songs
         tr.onclick = function(){
-          document.getElementById('song_deck1');
-          td.innerHTML = tags.Title || t2.Title;
-          var pl = document.createElement('tr');
-          var st = document.createElement('td');
-          st.innerHTML = tags.Title || t2.Title;
-          pl.appendChild(st);
-          $("playtable").appendChild(pl);
-          pl.file = f;
-          pl.className = 'visible';
+          var span = document.getElementById('song_deck' + no_deck );
+          span.innerHTML = tags.Title || t2.Title;
           var url;
           if(window.createObjectURL){
             url = window.createObjectURL(f)
@@ -146,15 +139,6 @@ function getSongs(files){
 }
 
 var currentSong = 0;
-
-function nextSong(){
-  try{
-    currentSong.nextSibling.onclick(); 
-  }catch(e){
-    currentSong = document.querySelector("#playtable tr");
-    currentSong.onclick();
-  }
-}
 
 function deck1(){
   no_deck = '1';

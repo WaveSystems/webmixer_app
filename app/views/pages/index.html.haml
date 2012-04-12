@@ -3,6 +3,8 @@
     %h3 Here will go the whole mixer panel
     #left_mixer
       -#Left mixer
+      %span(id="song_deck1") 00 - None
+      %br
       = image_tag('turntable.png') 
       = image_tag('needle_left.png')
     #pitch
@@ -27,6 +29,8 @@
       %h4 Pitch
       = image_tag('pitch.png') 
     #right_mixer
+      %span(id="song_deck2") 00 - None
+      %br
       = image_tag('needle_right.png') 
       = image_tag('turntable.png') 
     #bottom_left_pad
