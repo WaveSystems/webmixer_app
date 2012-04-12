@@ -140,6 +140,14 @@ function getSongs(files){
 
 var currentSong = 0;
 
+function play(deck){
+  $("player" + deck).play();
+}
+
+function pause(deck){
+  $("player" + deck).pause();
+}
+
 function deck1(){
   no_deck = '1';
   document.getElementById('deck1_button').style.background = "#a2a2a2";
