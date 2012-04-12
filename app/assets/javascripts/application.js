@@ -142,14 +142,19 @@ var currentSong = 0;
 
 function deck1(){
   no_deck = '1';
+  document.getElementById('deck1_button').style.background = "#a2a2a2";
+  document.getElementById('deck2_button').style.background = "#bcbcbc";
 }
 
 function deck2(){
   no_deck = '2';
+  document.getElementById('deck1_button').style.background = "#bcbcbc";
+  document.getElementById('deck2_button').style.background = "#a2a2a2";
 }
 
 onload = function(){
   //with no dependencies, it should be fine to use this instead of ondomcontentloaded
+  document.getElementById('deck1_button').style.background = "#a2a2a2";
   var a = document.createElement('audio');
   if(!a.canPlayType) $("support").innerHTML += "Your browser does not support HTML5 Audio<br>";
   if(!(a.canPlayType && a.canPlayType('audio/ogg; codecs="vorbis"').replace(/no/, ''))) 
