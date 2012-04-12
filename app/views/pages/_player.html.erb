@@ -13,10 +13,10 @@
       <input type="text" placeholder="filter library" spellcheck=off autocomplete=off oninput="runSearch(this.value)">
     </div>
     <div style="height: 37px"></div>
-    <div id="listtools">
-      <a href="javascript:deck1()" style="color: black;">Deck 1</a> / 
-      <a href="javascript:deck2()" style="color: black;">Deck 2</a>
-    </div>
+    <form id="listtools">
+      <input type="button" onclick='deck1()' value="Deck 1"></input>  
+      <input type="button" onclick='deck2()' value="Deck 2"></input>  
+    </form>
     <div id="songs">
       <table id="songtable" cellspacing=0 cellpadding=0>
       </table>
