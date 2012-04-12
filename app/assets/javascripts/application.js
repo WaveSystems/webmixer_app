@@ -100,8 +100,8 @@ function getSongs(files){
 
         //Between this marks is the code to make to tables of songs
         tr.onclick = function(){
-          var span = document.getElementById('song_deck' + no_deck );
-          span.innerHTML = tags.Title || t2.Title;
+          var div = document.getElementById('song_deck' + no_deck );
+          div.innerHTML = tags.Title || t2.Title;
           var url;
           if(window.createObjectURL){
             url = window.createObjectURL(f)
