@@ -85,11 +85,24 @@ body {
   color: white;
 }
 
+#vol_pad1 {
+  position: absolute;
+  left: 483px;
+  top: 188px;
+}
+
+#vol_pad2 {
+  position: absolute;
+  left: 483px;
+  top: 309px;
+}
+
 #library {
   display: inline;
   position: absolute;
   margin-left: 1050px;
   float: right;
+  width: 290px;
   background: #ddd;
 }
 

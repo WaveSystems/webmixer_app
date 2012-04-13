@@ -113,7 +113,7 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
-          console.log(no_deck);
+          $("player" + no_deck).volume=0.5;
           $("player" + no_deck).src = url;
           $("player" + no_deck).play();
           for(var i = document.querySelectorAll('.playing'), l = i.length; l--;){
@@ -142,6 +142,7 @@ var currentSong = 0;
 
 function play(deck){
   $("player" + deck).play();
+
 }
 
 function pause(deck){
@@ -161,8 +162,10 @@ function deck2(){
 }
 
 onload = function(){
-  //with no dependencies, it should be fine to use this instead of ondomcontentloaded
+
   document.getElementById('deck1_button').style.background = "#a2a2a2";
+
+  //with no dependencies, it should be fine to use this instead of ondomcontentloaded
   var a = document.createElement('audio');
   if(!a.canPlayType) $("support").innerHTML += "Your browser does not support HTML5 Audio<br>";
   if(!(a.canPlayType && a.canPlayType('audio/ogg; codecs="vorbis"').replace(/no/, ''))) 
@@ -186,3 +189,11 @@ onload = function(){
     }
   }
 }
+
+//JQuery
+
+jQuery(document).ready(function(){$("#vol_pad1").click(function(e){
+  console.log(e.pageX);
+  console.log(e.pageY);
+}); 
+})
