@@ -1,3 +1,172 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image: url('background.png');
+  background-color: black;
+}
+
+#mixer_panel {
+  width: 1024px;
+  height: 768px;
+  display: block;
+  border: 2px solid black;
+  padding-left: 5px;
+  float:left;
+}
+
+#mixer_panel div {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px 0 5px;
+}
+
+#mixer_panel h3 {
+  color: white;
+}
+
+#song_deck1, #song_deck2 {
+  color: white;
+  font-size: 1.5em;
+  width: 400px;
+  height: 50px;
+}
+
+#left_mixer img{
+  display: block;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pitch h4,#pitch h4 {
+  color: white;
+}
+
+#center_panel img{
+  display: block;
+  padding: 10px 10px;
+}
+
+#left_knob img, #right_knob img {
+  display: block;
+  padding: 10px 0 10px 0;
+}
+
+#right_mixer img{
+  display: block;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bottom_left_pad {
+  padding-left: 10px;
+}
+
+#bottom_left_pad, #bottom_center_pad, #bottom_right_pad{
+  padding-top: 30px;
+}
+
+#bottom_center_pad img{
+  display: block;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bottom_left_pad img, #bottom_right_pad img{
+  display: inline;
+  padding: 0 0 ;
+}
+
+#bottom_left_pad h4, #bottom_right_pad h4{
+  padding: 10px 0 10px 0;
+  color: white;
+}
+
+#vol_pad1 {
+  position: absolute;
+  left: 483px;
+  top: 188px;
+}
+
+#vol_pad2 {
+  position: absolute;
+  left: 483px;
+  top: 309px;
+}
+
+#library {
+  display: inline;
+  position: absolute;
+  margin-left: 1050px;
+  float: right;
+  width: 290px;
+  background: #ddd;
+}
+
+#startup #prompt {
+  background: #ddd;
+  border-radius: 5px;
+}
+
+#mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+#prompt input {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+#footer {
+  bottom: -3px;
+  background: #858585;
+}
+
+#songs {
+  background: #ddd;
+  overflow: scroll;
+  padding-left: 5px;
+  height: 530px;
+}
+
+table tr:hover {
+  background: #BBCEE9;
+  border-radius: 5px;
+}
+
+table tr {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+table td {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 5px;
+}
+
+#listtools {
+  bottom: 40px;
+  right: 5px;
+  color: #ddd;
+}
+#listtools input {
+  background: #bcbcbc;
+  color: black;
+  border: solid 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+tr.hidden {
+  display:none;
+}
+

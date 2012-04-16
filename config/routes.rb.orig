@@ -2,5 +2,9 @@ WebmixerApp::Application.routes.draw do
   devise_for :users
 
   root :to => 'pages#index'
+<<<<<<< HEAD
+  get '/dashboard' => 'player#dashboard'
+=======
   get '/decks' => 'pages#decks'
+>>>>>>> media_buffer
 end
