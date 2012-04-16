@@ -1,0 +1,88 @@
+= if user_signed_in?
+  #mixer_panel
+    %h3 Songs in deck: 
+    %div(id="song_deck1") 00 - None
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    %div(id="song_deck2") 00 - None
+    #left_mixer
+      -#Left mixer
+      = image_tag('turntable.png') 
+      = image_tag('needle_left.png')
+    #pitch
+      %h4 Pitch
+      = image_tag('pitch.png') 
+      -#Volumen and master knobs
+    #left_knob
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+    #center_panel
+      = link_to image_tag('volumen_pad.png', :id =>'vol_pad1'), ''
+      = image_tag('volumen.png', :id =>'volumen1') 
+      = link_to image_tag('volumen_pad.png', :id =>'vol_pad2'), ''
+      = image_tag('volumen.png', :id =>'volumen2') 
+    #right_knob
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      = image_tag('knob.png') 
+      -#Right mixer
+    #pitch
+      %h4 Pitch
+      = image_tag('pitch.png') 
+    #right_mixer
+      = image_tag('needle_right.png') 
+      = image_tag('turntable.png') 
+    #bottom_left_pad
+      %h4 Loop
+      = image_tag('loop_1.png', :class => 'join')
+      = image_tag('loop_2.png', :class => 'join')
+      = image_tag('loop_4.png', :class => 'join')
+      = image_tag('loop_8.png', :class => 'join')
+      = image_tag('loop_16.png', :class => 'join')
+      = image_tag('loop_32.png', :class => 'join')
+      %h4 Media control
+      = image_tag('cue.png', :class => 'join', :id => 'cue1')
+      = link_to image_tag('pause.png', :class => 'join', :id => 'pause1'), 'javascript:pause(1)'
+      = link_to image_tag('play.png', :class => 'join', :id => 'play1'), 'javascript:play(1)'
+      = image_tag('sync.png', :class => 'join', :id => 'sync1')
+    #bottom_center_pad
+      = image_tag('balance.png')
+    #bottom_right_pad
+      %h4 Loop
+      = image_tag('loop_1.png', :class => 'join')
+      = image_tag('loop_2.png', :class => 'join')
+      = image_tag('loop_4.png', :class => 'join')
+      = image_tag('loop_8.png', :class => 'join')
+      = image_tag('loop_16.png', :class => 'join')
+      = image_tag('loop_32.png', :class => 'join')
+      %h4 Media control
+      = image_tag('cue.png', :class => 'join', :id => 'cue2')
+      = link_to image_tag('pause.png', :class => 'join', :id => 'pause1'), 'javascript:pause(2)'
+      = link_to image_tag('play.png', :class => 'join', :id => 'play1'), 'javascript:play(2)'
+      = image_tag('sync.png', :class => 'join', :id => 'sync1')
+  
+  #library
+    = render 'pages/player'
