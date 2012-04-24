@@ -31,7 +31,6 @@ function parseFile(file, callback){
 }
 
 function runSearch(query){
-  console.log(query);
   var regex = new RegExp(query.trim().replace(/\s+/g, '.*'), 'ig');
   for(var i = $('songtable').getElementsByTagName('tr'), l = i.length; l--;){
     if(regex.test(i[l].innerHTML)){
@@ -64,7 +63,6 @@ function getSongs(files){
     var size = file.size || file.fileSize || 4096;
     if(size < 4095) { 
       // Most probably not a real MP3
-      console.log(path);
       continue;
     }
 
@@ -86,7 +84,6 @@ function getSongs(files){
 
       var f = queue.shift();
       parseFile(f,function(tags){
-        console.log(tags);
         var tr = document.createElement('tr');
         var t2 = guessSong(f.webkitRelativePath || f.mozFullPath || f.fileName); 
         //it should be innerText/contentText but its annoying.
@@ -135,7 +132,6 @@ function getSongs(files){
   }
   process();
 
-  console.log(files);
 }
 
 var currentSong = 0;
