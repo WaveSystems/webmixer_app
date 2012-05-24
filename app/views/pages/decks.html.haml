@@ -1,4 +1,4 @@
-= if user_signed_in?
+- if user_signed_in?
   #mixer_panel
     %h3 Songs in deck: 
     %div(id="song_deck1") 00 - None
@@ -39,10 +39,9 @@
       = image_tag('knob.png') 
       = image_tag('knob.png') 
     #center_panel
-      = link_to image_tag('volumen_pad.png', :id =>'vol_pad1'), ''
-      = image_tag('volumen.png', :id =>'volumen1') 
-      = link_to image_tag('volumen_pad.png', :id =>'vol_pad2'), ''
-      = image_tag('volumen.png', :id =>'volumen2') 
+      .sliders
+        .slider1
+        .slider2
     #right_knob
       = image_tag('knob.png') 
       = image_tag('knob.png') 
@@ -86,3 +85,4 @@
   
   #library
     = render 'pages/player'
+

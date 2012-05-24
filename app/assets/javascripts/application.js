@@ -10,8 +10,11 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require jquery
+//= require jquery-ui
 //= require prototype
 //= require id3v2
+
 
 var no_deck = '1';
 
@@ -115,7 +118,6 @@ function getSongs(files){
           for(var i = document.querySelectorAll('.playing'), l = i.length; l--;){
             i[l].className = '';
           }
-          currentSong = pl;
         }
         ////////////////////////////////////////////////////
         $('songtable').appendChild(tr);
@@ -184,3 +186,4 @@ onload = function(){
     }
   }
 }
+

@@ -100,7 +100,6 @@ body {
 #library {
   display: inline;
   position: absolute;
-  margin-left: 1050px;
   float: right;
   width: 290px;
   background: #ddd;
@@ -170,3 +169,14 @@ tr.hidden {
   display:none;
 }
 
+.sliders {
+  width:50px;
+}
+
+.slider1 {
+  float:left;
+}
+
+.slider2 {
+  float:right;
+}
