@@ -12,6 +12,8 @@
 //
 //= require prototype
 //= require id3v2
+//= require jquery
+//= require jrotate
 
 var no_deck = '1';
 
@@ -109,6 +111,7 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
+          deckRotate();
           $("player" + no_deck).volume=0.5;
           $("player" + no_deck).src = url;
           $("player" + no_deck).play();
@@ -183,4 +186,14 @@ onload = function(){
       }
     }
   }
+}
+
+//JRotate
+
+function deckRotate(){
+  var angle = 0;
+  setInterval(function(){
+    angle+=3;
+    $("#turntable_1").rotate(angle);
+  },50);
 }
