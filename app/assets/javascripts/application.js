@@ -10,17 +10,16 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require twitter/bootstrap
-//= require_tree .
+//= require prototype
+//= require id3v2
+
 var no_deck = '1';
 
 function parseFile(file, callback){
-  if(localStorage[file.fileName]) return callback(JSON.parse(localStorage[file.fileName]));
+  if(localStorage[file.name]) return callback(JSON.parse(localStorage[file.name]));
   ID3v2.parseFile(file,function(tags){
     //to not overflow localstorage
-    localStorage[file.fileName] = JSON.stringify({
+    localStorage[file.name] = JSON.stringify({
       Title: tags.Title,
       Artist: tags.Artist,
       Album: tags.Album,
@@ -55,7 +54,7 @@ function getSongs(files){
   for(var i = 0; i < files.length; i++){
     var file = files[i];
 
-    var path = file.webkitRelativePath || file.mozFullPath || file.fileName;
+    var path = file.webkitRelativePath || file.mozFullPath || file.name;
     if (path.indexOf('.AppleDouble') != -1) {
       // Meta-data folder on Apple file systems, skip
       continue;
@@ -66,12 +65,12 @@ function getSongs(files){
       continue;
     }
 
-    if(file.fileName.indexOf('mp3') != -1){ //only does mp3 for now
+    if(file.name.indexOf('mp3') != -1){ //only does mp3 for now
       if(mp3){
         queue.push(file);
       }
     }
-    if(file.fileName.indexOf('ogg') != -1  || file.fileName.indexOf('oga') != -1){
+    if(file.name.indexOf('ogg') != -1  || file.name.indexOf('oga') != -1){
       if(ogg){
         queue.push(file);
       }
@@ -85,7 +84,7 @@ function getSongs(files){
       var f = queue.shift();
       parseFile(f,function(tags){
         var tr = document.createElement('tr');
-        var t2 = guessSong(f.webkitRelativePath || f.mozFullPath || f.fileName); 
+        var t2 = guessSong(f.webkitRelativePath || f.mozFullPath || f.name); 
         //it should be innerText/contentText but its annoying.
         var td = document.createElement('td');
         td.innerHTML = tags.Title || t2.Title;
@@ -185,11 +184,3 @@ onload = function(){
     }
   }
 }
-
-//JQuery
-
-jQuery(document).ready(function(){$("#vol_pad1").click(function(e){
-  console.log(e.pageX);
-  console.log(e.pageY);
-}); 
-})
