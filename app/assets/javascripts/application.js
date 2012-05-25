@@ -12,11 +12,19 @@
 //
 //= require jquery
 //= require jquery-ui
-//= require prototype
 //= require id3v2
+//= require jrotate
 
 
 var no_deck = '1';
+var deck1_rotating = false;
+var deck2_rotating = false;
+var stop_deck1 = false;
+var stop_deck2 = false;
+var angle1 = 0;
+var angle2 = 0;
+var angle3 = 0;
+var angle4 = 0;
 
 function parseFile(file, callback){
   if(localStorage[file.name]) return callback(JSON.parse(localStorage[file.name]));
@@ -112,6 +120,10 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
+          angle3 = 45;
+          angle4 = 45;
+          deckRotate(no_deck);
+          needleRotate(no_deck);
           $("player" + no_deck).volume=0.5;
           $("player" + no_deck).src = url;
           $("player" + no_deck).play();
@@ -139,11 +151,30 @@ var currentSong = 0;
 
 function play(deck){
   $("player" + deck).play();
-
+  if(deck == 1){
+    deck1_rotating = false;
+    stop_deck1 = false;
+    angle3 = 45;
+  }else{
+    deck2_rotating = false;
+    stop_deck2 = false;
+    angle4 = 45;
+  }
+  deckRotate(deck);
+  needleRotate(deck);
 }
 
 function pause(deck){
   $("player" + deck).pause();
+  if(deck == 1){
+    angle3 = 0;
+    stop_deck1 = true;
+  }
+  else{
+    angle4 = 0;
+    stop_deck2 = true;
+  }
+  needleRotate(deck);
 }
 
 function deck1(){
@@ -187,3 +218,36 @@ onload = function(){
   }
 }
 
+//JRotate
+
+function deckRotate(deck){
+  if(deck == 1 ){
+    if(!deck1_rotating){
+      var rotating1 = setInterval(function(){
+        angle1+=5;
+        jQuery("#turntable_" + deck).rotate(angle1);
+        if(stop_deck1)
+          clearInterval(rotating1);
+      },50);
+      deck1_rotating = true;
+    }
+  }else{
+    if(!deck2_rotating){
+      var rotating2 = setInterval(function(){
+        angle2+=5;
+        jQuery("#turntable_" + deck).rotate(angle2);
+        if(stop_deck2)
+          clearInterval(rotating2);
+      },50);
+      deck2_rotating = true;
+    }
+  }
+}
+
+function needleRotate(deck){
+  if(deck == 1 ){
+    jQuery("#needle_" + deck).rotate({ animateTo:angle3})
+  }else{
+    jQuery("#needle_" + deck).rotate({ animateTo:angle4})
+  }
+}
