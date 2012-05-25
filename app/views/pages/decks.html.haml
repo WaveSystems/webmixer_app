@@ -27,11 +27,11 @@
     %div(id="song_deck2") 00 - None
     #left_mixer
       -#Left mixer
-      = image_tag('turntable.png', :id => 'turntable_1') 
-      = image_tag('needle_left.png')
+      = image_tag('turntable.png', :id => 'turntable_1', :onmousedown => 'javascript:pause(1)', :onmouseup => 'javascript:play(1)')
+      = image_tag('needle_left.png', :id => 'needle_1')
     #pitch
-      %h4 Pitch
-      = image_tag('pitch.png') 
+      -#%h4 Pitch
+      -#= image_tag('pitch.png') 
       -#Volumen and master knobs
     #left_knob
       = image_tag('knob.png') 
@@ -39,9 +39,9 @@
       = image_tag('knob.png') 
       = image_tag('knob.png') 
     #center_panel
-      = link_to image_tag('volumen_pad.png', :id =>'vol_pad1'), ''
+      = image_tag('volumen_pad.png', :id =>'vol_pad1')
       = image_tag('volumen.png', :id =>'volumen1') 
-      = link_to image_tag('volumen_pad.png', :id =>'vol_pad2'), ''
+      = image_tag('volumen_pad.png', :id =>'vol_pad2')
       = image_tag('volumen.png', :id =>'volumen2') 
     #right_knob
       = image_tag('knob.png') 
@@ -50,11 +50,11 @@
       = image_tag('knob.png') 
       -#Right mixer
     #pitch
-      %h4 Pitch
-      = image_tag('pitch.png') 
+      -#%h4 Pitch
+      -#= image_tag('pitch.png') 
     #right_mixer
-      = image_tag('needle_right.png') 
-      = image_tag('turntable.png', :id => 'turntable_2') 
+      = image_tag('turntable.png', :id => 'turntable_2', :onmousedown => 'javascript:pause(2)', :onmouseup => 'javascript:play(2)')
+      = image_tag('needle_left.png', :id => 'needle_2') 
     #bottom_left_pad
       %h4 Loop
       = image_tag('loop_1.png', :class => 'join')

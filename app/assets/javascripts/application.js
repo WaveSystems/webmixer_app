@@ -21,6 +21,8 @@ var stop_deck1 = false;
 var stop_deck2 = false;
 var angle1 = 0;
 var angle2 = 0;
+var angle3 = 0;
+var angle4 = 0;
 
 function parseFile(file, callback){
   if(localStorage[file.name]) return callback(JSON.parse(localStorage[file.name]));
@@ -116,7 +118,10 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
+          angle3 = 45;
+          angle4 = 45;
           deckRotate(no_deck);
+          needleRotate(no_deck);
           $("player" + no_deck).volume=0.5;
           $("player" + no_deck).src = url;
           $("player" + no_deck).play();
@@ -148,19 +153,27 @@ function play(deck){
   if(deck == 1){
     deck1_rotating = false;
     stop_deck1 = false;
+    angle3 = 45;
   }else{
     deck2_rotating = false;
     stop_deck2 = false;
+    angle4 = 45;
   }
   deckRotate(deck);
+  needleRotate(deck);
 }
 
 function pause(deck){
   $("player" + deck).pause();
-  if(deck == 1)
+  if(deck == 1){
+    angle3 = 0;
     stop_deck1 = true;
-  else
+  }
+  else{
+    angle4 = 0;
     stop_deck2 = true;
+  }
+  needleRotate(deck);
 }
 
 function deck1(){
@@ -227,5 +240,13 @@ function deckRotate(deck){
       },50);
       deck2_rotating = true;
     }
+  }
+}
+
+function needleRotate(deck){
+  if(deck == 1 ){
+    jQuery("#needle_" + deck).rotate({ animateTo:angle3})
+  }else{
+    jQuery("#needle_" + deck).rotate({ animateTo:angle4})
   }
 }
