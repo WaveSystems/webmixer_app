@@ -22,6 +22,30 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
+    <script type = 'text/javascript'>
+      jQuery(document).ready(function() {
+          jQuery(".slider1").slider({
+            orientation:"vertical",
+            range: "min",
+            min: 0,
+            max: 100,
+            step: 5,
+            slide: function(event, ui) {
+              jQuery(".slider1-val").html(ui.value);
+            }
+          });
+          jQuery(".slider2").slider({
+            orientation:"vertical",
+            range: "min",
+            min: 0,
+            max: 100,
+            step: 5,
+            slide: function(event, ui) {
+              jQuery(".slider2-val").html(ui.value);
+            }
+          });
+      });
+    </script>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
           <div class="container">

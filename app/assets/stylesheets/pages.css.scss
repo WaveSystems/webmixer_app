@@ -43,11 +43,6 @@ body {
   color: white;
 }
 
-#center_panel img{
-  display: block;
-  padding: 10px 10px;
-}
-
 #left_knob img, #right_knob img {
   display: block;
   padding: 10px 0 10px 0;
@@ -170,9 +165,12 @@ tr.hidden {
 }
 
 .sliders {
-  width:50px;
+  display:block;
+  width:60px;
 }
 
+.slider1-val {width:20px;}
+.slider2-val {width:20px;}
 .slider1 {
   float:left;
 }
