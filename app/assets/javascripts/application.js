@@ -21,6 +21,8 @@ var deck1_rotating = false;
 var deck2_rotating = false;
 var stop_deck1 = false;
 var stop_deck2 = false;
+var set_deck1 = false;
+var set_deck2 = false;
 var angle1 = 0;
 var angle2 = 0;
 var angle3 = 0;
@@ -120,6 +122,11 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
+          if(no_deck == 1)
+            set_deck1 = true;
+          else
+            set_deck2 = true;
+
           angle3 = 45;
           angle4 = 45;
           deckRotate(no_deck);
@@ -150,31 +157,37 @@ function getSongs(files){
 var currentSong = 0;
 
 function play(deck){
-  $("player" + deck).play();
-  if(deck == 1){
+  if(deck == 1 && set_deck1 == true){
     deck1_rotating = false;
     stop_deck1 = false;
     angle3 = 45;
-  }else{
+    $("player" + deck).play();
+    deckRotate(deck);
+    needleRotate(deck);
+  }
+  if(deck == 2 && set_deck2 == true){
     deck2_rotating = false;
     stop_deck2 = false;
     angle4 = 45;
+    $("player" + deck).play();
+    deckRotate(deck);
+    needleRotate(deck);
   }
-  deckRotate(deck);
-  needleRotate(deck);
 }
 
 function pause(deck){
-  $("player" + deck).pause();
-  if(deck == 1){
+  if(deck == 1 && set_deck1 == true){
     angle3 = 0;
     stop_deck1 = true;
+    $("player" + deck).pause();
+    needleRotate(deck);
   }
-  else{
+  if(deck == 2 && set_deck2 == true){
     angle4 = 0;
     stop_deck2 = true;
+    $("player" + deck).pause();
+    needleRotate(deck);
   }
-  needleRotate(deck);
 }
 
 function deck1(){
