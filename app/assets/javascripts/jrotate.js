@@ -49,6 +49,7 @@ jQuery.fn.extend({
             return ret;
     },
     stopRotate: function(){
+      console.log('entered');
         for (var i=0,i0=this.length;i<i0;i++)
             {
                 var element=this.get(i);	

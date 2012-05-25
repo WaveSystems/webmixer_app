@@ -15,6 +15,11 @@
 //= require jrotate
 
 var no_deck = '1';
+var deck1_rotating = false;
+var deck2_rotating = false;
+var stop_deck1 = false;
+var stop_deck2 = false;
+var angle = 0;
 
 function parseFile(file, callback){
   if(localStorage[file.name]) return callback(JSON.parse(localStorage[file.name]));
@@ -139,11 +144,22 @@ var currentSong = 0;
 
 function play(deck){
   $("player" + deck).play();
-
+  if(deck == 1){
+    deck1_rotating = false;
+    stop_deck1 = false;
+  }else{
+    deck2_rotating = false;
+    stop_deck2 = false;
+  }
+  deckRotate(deck);
 }
 
 function pause(deck){
   $("player" + deck).pause();
+  if(deck == 1)
+    stop_deck1 = true;
+  else
+    stop_deck2 = true;
 }
 
 function deck1(){
@@ -190,10 +206,25 @@ onload = function(){
 //JRotate
 
 function deckRotate(deck){
-  var angle = 0;
-  setInterval(function(){
-    angle+=5;
-    jQuery("#turntable_" + deck).rotate(angle);
-  },50);
-  //jQuery('#turntable_1').attr('src','/assets/rotating.gif') 
+  if(deck == 1 ){
+    if(!deck1_rotating){
+      var rotating1 = setInterval(function(){
+        angle+=5;
+        jQuery("#turntable_" + deck).rotate(angle);
+        if(stop_deck1)
+          clearInterval(rotating1);
+      },50);
+      deck1_rotating = true;
+    }
+  }else{
+    if(!deck2_rotating){
+      var rotating2 = setInterval(function(){
+        angle+=5;
+        jQuery("#turntable_" + deck).rotate(angle);
+        if(stop_deck2)
+          clearInterval(rotating2);
+      },50);
+      deck2_rotating = true;
+    }
+  }
 }
