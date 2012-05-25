@@ -19,7 +19,8 @@ var deck1_rotating = false;
 var deck2_rotating = false;
 var stop_deck1 = false;
 var stop_deck2 = false;
-var angle = 0;
+var angle1 = 0;
+var angle2 = 0;
 
 function parseFile(file, callback){
   if(localStorage[file.name]) return callback(JSON.parse(localStorage[file.name]));
@@ -209,8 +210,8 @@ function deckRotate(deck){
   if(deck == 1 ){
     if(!deck1_rotating){
       var rotating1 = setInterval(function(){
-        angle+=5;
-        jQuery("#turntable_" + deck).rotate(angle);
+        angle1+=5;
+        jQuery("#turntable_" + deck).rotate(angle1);
         if(stop_deck1)
           clearInterval(rotating1);
       },50);
@@ -219,8 +220,8 @@ function deckRotate(deck){
   }else{
     if(!deck2_rotating){
       var rotating2 = setInterval(function(){
-        angle+=5;
-        jQuery("#turntable_" + deck).rotate(angle);
+        angle2+=5;
+        jQuery("#turntable_" + deck).rotate(angle2);
         if(stop_deck2)
           clearInterval(rotating2);
       },50);
