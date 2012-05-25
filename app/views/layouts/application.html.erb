@@ -30,8 +30,10 @@
             min: 0,
             max: 100,
             step: 5,
+            value: 100,
             slide: function(event, ui) {
               jQuery(".slider1-val").html(ui.value);
+              document.getElementById('player1').volume = ui.value/100;
             }
           });
           jQuery(".slider2").slider({
@@ -40,8 +42,10 @@
             min: 0,
             max: 100,
             step: 5,
+            value: 100,
             slide: function(event, ui) {
               jQuery(".slider2-val").html(ui.value);
+              document.getElementById('player2').volume = ui.value/100;
             }
           });
       });
