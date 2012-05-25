@@ -189,11 +189,11 @@ onload = function(){
 
 //JRotate
 
-function deckRotate(){
+function deckRotate(deck){
   var angle = 0;
   setInterval(function(){
     angle+=5;
-    jQuery("#turntable_1").rotate(angle);
+    jQuery("#turntable_" + deck).rotate(angle);
   },50);
   //jQuery('#turntable_1').attr('src','/assets/rotating.gif') 
 }
