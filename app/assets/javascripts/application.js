@@ -10,9 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require prototype
-//= require id3v2
 //= require jquery
+//= require id3v2
 //= require jrotate
 
 var no_deck = '1';
@@ -111,7 +110,7 @@ function getSongs(files){
             url = window.webkitURL.createObjectURL(f)
           }
 
-          deckRotate();
+          deckRotate(no_deck);
           $("player" + no_deck).volume=0.5;
           $("player" + no_deck).src = url;
           $("player" + no_deck).play();
@@ -193,7 +192,8 @@ onload = function(){
 function deckRotate(){
   var angle = 0;
   setInterval(function(){
-    angle+=3;
-    $("#turntable_1").rotate(angle);
+    angle+=5;
+    jQuery("#turntable_1").rotate(angle);
   },50);
+  //jQuery('#turntable_1').attr('src','/assets/rotating.gif') 
 }
