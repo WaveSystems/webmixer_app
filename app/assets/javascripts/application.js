@@ -60,8 +60,6 @@ function canPlay(type){
 
 function $(id){return document.getElementById(id)}
 function getSongs(files){
-  $("mask").style.display = 'none';
-  $("startup").style.display = 'none';
   var queue = [];
   var mp3 = canPlay('audio/mpeg;'), ogg = canPlay('audio/ogg; codecs="vorbis"');
   for(var i = 0; i < files.length; i++){
